@@ -26,15 +26,76 @@
           </div>
           <div>
         <ul class="MenuOptions">
+          <li><button class="nav-links" onclick="document.getElementById('id01').style.display='block'">Login</button></li>
           <li><a href="aur.html" class ="nav-links">Aur</a></li>
           <li><a href="argint.html" class ="nav-links">Argint</a></li>
           <li><a href="platina.html" class ="nav-links">Platina</a></li>
-          <li><a  href="main_page.html" class ="nav-links">Home</a></li>
+          <li><a href="main_page.html" class ="nav-links">Home</a></li>
         </ul>
       </div>
     </nav>
   </main>
   </header>
+
+  <!--- Login modul --->
+
+  <div id="id01" class="modal">
+    <!--- Button pentru a inchide fereastra --->
+    <span onclick="document.getElementById('id01').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
+
+    <form class="modal-content animate">
+      <div class="imgcontainer">
+        <img src="img/welcome.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <div class="boxesIn">
+          <div class="boxIn">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div class="forgot_password">
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="socialMedia_Container">
+
+          <span class="logInWith">Log in with</span>
+
+          <div class="social_box">
+            <a href="#"><img src = "img/google.png" alt ="google"></a>
+            <a href="#"><img src = "img/facebook.png" alt ="google"></a>
+            <a href="#"><img src = "img/instagram.png" alt ="google"></a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="LogContainer" style="background-color: inherit">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn">Cancel</button>
+        <div class="loginButton">
+          <button  class="btn" type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <!--- Register modul --->
+
+  <!--- Mail modul --->
+
   <div class="intro">
     <div class="intro-text">
       <h1 class="hide">
@@ -151,6 +212,7 @@
         </div>
 
       </div>
+        <script src="js/modal.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
         integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
         crossorigin="anonymous"
