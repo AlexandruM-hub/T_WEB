@@ -294,8 +294,9 @@ max-height: 225px;
 
 
 .modal-content {
+  overflow-y: auto;
   background-color: rgb(233, 233, 233);
-  margin: 5px auto;
+  margin: 5px auto 100px;
   border: 1px solid #888;
   width: 50%;
   padding: 20px;
@@ -393,17 +394,64 @@ max-height: 225px;
 
 }
 
+.btnn{
+  width: 140px;
+  height: 30px;
+  font-size: 102%;
+}
+
 .MenuOptions button{
   color: #fff;
   font-weight: bold;
   display: block;
   font-size: 100%;
   background-color: inherit;
-  border: none;
   font-family: inherit;
 }
 
 .MenuOptions button:hover{
   font-size: 105%;
   color: #f7e984;
+}
+
+.inputs input{
+  min-width: 100%;
+}
+
+.mail img{
+  max-width: 100px;
+  max-height: 100px;
+
+}
+
+.mail button{
+border: none;
+background-color: transparent;
+background-repeat: no-repeat;
+cursor: pointer;
+overflow: hidden;
+position: fixed;
+right: 0px; bottom: 5px;
+
+}
+
+.mail{
+  margin-right: 50px;
+}
+
+.modal-content3{
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  overflow-y: auto;
+  background-color: rgb(233, 233, 233);
+
+  border: 1px solid #888;
+  width: 20%;
+  padding: 20px;
+}
+
+.mailMessage{
+  height: 200px;
+  min-width: 100%;
 }

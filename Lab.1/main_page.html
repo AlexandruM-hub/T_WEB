@@ -26,6 +26,7 @@
           </div>
           <div>
         <ul class="MenuOptions">
+          <li><button class="nav-links" onclick="document.getElementById('id02').style.display='block'">Register</button></li>
           <li><button class="nav-links" onclick="document.getElementById('id01').style.display='block'">Login</button></li>
           <li><a href="aur.html" class ="nav-links">Aur</a></li>
           <li><a href="argint.html" class ="nav-links">Argint</a></li>
@@ -38,7 +39,6 @@
   </header>
 
   <!--- Login modul --->
-
   <div id="id01" class="modal">
     <!--- Button pentru a inchide fereastra --->
     <span onclick="document.getElementById('id01').style.display='none'"
@@ -94,8 +94,123 @@
 
   <!--- Register modul --->
 
-  <!--- Mail modul --->
+  <div id="id02" class="modal">
+    <!--- Button pentru a inchide fereastra --->
+    <span onclick="document.getElementById('id02').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
 
+    <form class="modal-content animate">
+      <div class="imgcontainer">
+        <img src="img/welcome.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <div class="boxesRegister">
+
+          <div class="boxIn">
+            <label for="uname"><b>Name</b></label>
+            <div class="inputs">
+              <input type="text" placeholder="Enter Username" name="uname" required>
+            </div>
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Password</b></label>
+            <div class="inputs">
+              <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Enter Password again</b></label>
+            <div class="inputs">
+              <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Country</b></label>
+            <div class="inputs">
+              <input type="text" placeholder="Enter Country" name="psw" required>
+            </div>
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Mail</b></label>
+            <div class="inputs">
+              <input type="text" placeholder="Enter mail address" name="psw" required>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="socialMedia_Container">
+          <span class="logInWith">Log in with</span>
+
+          <div class="social_box">
+            <a href="#"><img src = "img/google.png" alt ="google"></a>
+            <a href="#"><img src = "img/facebook.png" alt ="google"></a>
+            <a href="#"><img src = "img/instagram.png" alt ="google"></a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="LogContainer" style="background-color: inherit">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="btn">Cancel</button>
+        <div class="loginButton">
+          <button  class="btnn" type="submit">Register/Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <!--- Mail modul --->
+  <div id="id03" class="modal">
+    <!--- Button pentru a inchide fereastra --->
+    <span onclick="document.getElementById('id03').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
+
+    <form class="modal-content3 animate">
+
+      <div class="container">
+        <div class="boxesMessage">
+
+          <div class="boxIn">
+            <label for="uname"><b>Enter your Mail</b></label>
+            <div class="inputs">
+              <input type="text" placeholder="Enter your mail" name="uname" required>
+            </div>
+          </div>
+
+          <div class="boxIn">
+            <label for="psw"><b>Message</b></label>
+            <div class="inputs">
+                <textarea class="mailMessage" type="text" rows="rows" placeholder="Message" name="psw" required></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="LogContainer" style="background-color: inherit">
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="btn">Cancel</button>
+        <div class="loginButton">
+          <button  class="btn" type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <span class="mail">
+    <button class="btnMail" onclick="document.getElementById('id03').style.display='block'"><img src="img/mes.png" alt="Mail us" ></button>
+  </span>
+
+  <!--- INTRO--->
   <div class="intro">
     <div class="intro-text">
       <h1 class="hide">
@@ -111,6 +226,8 @@
   </div>
   <div class="slider"></div>
 
+
+<!---CONTINUT --->
     <div class="Back">
       <div class="ClearFix">
         <h1>Totul despre minerale</h1>
@@ -151,7 +268,9 @@
           </p>
 
       </article>
+
     </div>
+
 
 
         <h2 class="Materiale" >Principalele minerale industriale</h2>
