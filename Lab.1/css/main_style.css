@@ -415,7 +415,7 @@ max-height: 225px;
 }
 
 .inputs input{
-  min-width: 100%;
+  min-width: 50%;
 }
 
 .mail img{
@@ -454,4 +454,12 @@ right: 0px; bottom: 5px;
 .mailMessage{
   height: 200px;
   min-width: 100%;
+}
+
+#usercheck {
+  margin: 0;
+}
+
+#passcheck, #usercheckRegister, #passcheckRegister, #conpasscheck {
+  margin: 0;
 }
