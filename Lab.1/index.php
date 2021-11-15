@@ -193,7 +193,7 @@
     <span onclick="document.getElementById('id03').style.display='none'"
   class="close" title="Close Modal">&times;</span>
 
-    <form class="modal-content3 animate">
+    <form class="modal-content3 animate" action="php/Contact.php">
 
       <div class="container">
         <div class="boxesMessage">
@@ -201,21 +201,21 @@
           <div class="boxIn">
             <label for="mailMail"><b>Enter your Mail</b></label>
             <div class="inputs">
-              <input type="text" placeholder="Enter your mail" name="mailMail" required>
+              <input type="text" placeholder="Enter your mail" id ="mailMail" name="mailMail" required>
             </div>
           </div>
 
           <div class="boxIn">
             <label for="psw"><b>Message</b></label>
             <div class="inputs">
-                <textarea class="mailMessage" type="text" rows="rows" placeholder="Message" name="psw" required></textarea>
+                <textarea class="mailMessage" id="mailText" type="text" rows="rows" placeholder="Message" name="mailText" required></textarea>
             </div>
           </div>
         </div>
       </div>
 
       <div class="LogContainer" style="background-color: inherit">
-        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="btn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="submit">Cancel</button>
         <div class="loginButton">
           <button  class="btn" type="submit">Send</button>
         </div>

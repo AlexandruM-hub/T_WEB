@@ -4,7 +4,7 @@ include_once("db.php");
 
 $username = $_REQUEST["usernames"];
 $password = $_REQUEST["password"];
-
+//clear la valori , username check -> password check , parolile trebuie sa fie criptate
 $res=mysqli_query($conn,"SELECT username FROM userdata WHERE username = '$username' and password = '$password'");
 $row = mysqli_num_rows($res);
 

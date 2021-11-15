@@ -10,7 +10,7 @@
   $res = mysqli_query($conn,"SELECT username FROM userdata WHERE username = '$username'");
   $row = mysqli_num_rows($res);
   if($row > 0){
-      echo '<script>alert("Username is taken!")</script>';
+      echo '<script>alert("Username is already taken!")</script>';
       header("Refresh:0; url =../index.php");
   }
   else {
