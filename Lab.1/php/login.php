@@ -2,21 +2,43 @@
 
 include_once("db.php");
 
-$username = $_REQUEST["usernames"];
-$password = $_REQUEST["password"];
-//clear la valori , username check -> password check , parolile trebuie sa fie criptate
-$res=mysqli_query($conn,"SELECT username FROM userdata WHERE username = '$username' and password = '$password'");
-$row = mysqli_num_rows($res);
+$username = mysqli_real_escape_string($conn, $_POST['usernames']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
 
-if($row > 0){
-  echo '<script>alert("Welcome")</script>';
-  header("Refresh:0; url =../index.php");
+//validare de back
+function validationFunction($toCheck){
+  if($toCheck == ""){
+    return false;
+  }else if (strlen($toCheck) < 4 || strlen($toCheck) > 10){
+    return false;
+  }
+  return true;
 }
-else {
-  echo '<script>alert("Username or password wrong!")</script>'
-  . mysqli_error($conn);
-  header("Refresh:0; url =../index.php");
+
+if(validationFunction($username) && validationFunction($password)){
+  $res=mysqli_query($conn,"SELECT username FROM userdata WHERE username = '$username'");
+  $row = mysqli_num_rows($res);
+  if($row > 0){
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $ResultSet = $conn -> query("SELECT password FROM userdata WHERE username = '$username'");
+      if($value = $ResultSet -> fetch_assoc()){
+        $dbPassword = $value["password"];
+        $verify = password_verify($password, $dbPassword);
+        if($verify){
+          echo json_encode(array("statusCode" => 200));
+        } else{
+          echo json_encode(array("statusCode" => 201));
+        }
+    }
+  }
+  else {
+    // username gresit
+    echo json_encode(array("statusCode" => 201));
+  }
+  mysqli_close($conn);
+}else {
+  echo json_encode(array("statusCode" => 201));
 }
-mysqli_close($conn);
+
 
 ?>

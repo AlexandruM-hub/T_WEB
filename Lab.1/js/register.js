@@ -97,7 +97,42 @@ $(document).ready(function () {
           validateConfirmPasswrd();
           if ((usernameError == true) && (passwordError == true) && (confirmPasswordError == true) && (emailError == true))
           {
-              return true;
+            var usernamesRegister = $('#usernamesRegister').val();
+            var passwordRegister = $('#passwordRegister').val();
+            var country = $('#country').val();
+            var email = $('#email').val();
+            $.ajax({
+              type: 'POST',
+              url: "php/register.php",
+              data:{
+                usernamesRegister: usernamesRegister,
+                passwordRegister: passwordRegister,
+                country: country,
+                email: email
+              },
+              cache: false,
+              success: function (response) {
+                var response = JSON.parse(response);
+                if(response.statusCode == 200){
+                  var modal = document.getElementById('id02');
+                  modal.style.display = 'none';
+
+                  $('#logged_in_id').show();
+                  setTimeout(function(){
+                    $('#logged_in_id').hide();
+                  },3000);
+                  $('#registerID').hide();
+                  $('#loginID').hide();
+
+                } else{
+                  alert("Something went wrong");
+                }
+              },
+              error: function() {
+                alert("Something Wrong");
+              }
+          });
+          return false;
           } else {
               return false;
           }

@@ -371,6 +371,15 @@ max-height: 225px;
   min-width: 30%;
 }
 
+.wrongLogin img{
+  display: none;
+  position: relative;
+  max-width: 100%;
+  min-width: 30%;
+  margin: auto;
+  z-index: 3;
+}
+
 .boxIn{
   padding: 5px;
 }
@@ -462,4 +471,13 @@ right: 0px; bottom: 5px;
 
 #passcheck, #usercheckRegister, #passcheckRegister, #conpasscheck {
   margin: 0;
+}
+
+.logged_in_div{
+  display: none;
+  position: absolute;
+  margin: 0;
+  background-color: rgba(166,183,215,0.7);
+  align-content: center;
+
 }

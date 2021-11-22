@@ -27,8 +27,8 @@
           </div>
           <div>
         <ul class="MenuOptions">
-          <li><button class="nav-links" onclick="document.getElementById('id02').style.display='block'">Register</button></li>
-          <li><button class="nav-links" onclick="document.getElementById('id01').style.display='block'">Login</button></li>
+          <li><button id="registerID" class="nav-links" onclick="document.getElementById('id02').style.display='block'">Register</button></li>
+          <li><button id="loginID" class="nav-links" onclick="document.getElementById('id01').style.display='block'">Login</button></li>
           <li><a href="aur.html" class ="nav-links">Aur</a></li>
           <li><a href="argint.html" class ="nav-links">Argint</a></li>
           <li><a href="platina.html" class ="nav-links">Platina</a></li>
@@ -45,9 +45,13 @@
     <span onclick="document.getElementById('id01').style.display='none'"
   class="close" title="Close Modal">&times;</span>
 
-    <form class="modal-content animate" action="php/login.php">
+    <form class="modal-content animate"  id="loginForm">
       <div class="imgcontainer">
-        <img src="img/welcome.png" alt="Avatar" class="avatar">
+        <img src="img/welcome.png" alt="Avatar" class="avatar" id='welcomeImgLogin'>
+      </div>
+
+      <div class="wrongLogin">
+        <img src="img/Wrong.png" alt="Wrong password or username" id="wrongLogin">
       </div>
 
       <div class="container">
@@ -106,7 +110,7 @@
     <span onclick="document.getElementById('id02').style.display='none'"
   class="close" title="Close Modal">&times;</span>
 
-    <form class="modal-content animate" action="php/register.php">
+    <form class="modal-content animate">
       <div class="imgcontainer">
         <img src="img/welcome.png" alt="Avatar" class="avatar">
       </div>
@@ -125,7 +129,7 @@
           <div class="boxIn">
             <label for="psw"><b>Password</b></label>
             <div class="inputs">
-              <input id="passwordRegister" type="password" placeholder="Enter Password" name="psw" required>
+              <input id="passwordRegister" type="password" placeholder="Enter Password" name="passwordRegister" required>
               <h5 id="passcheckRegister" style="color: red;"></h5>
             </div>
           </div>
@@ -141,14 +145,14 @@
           <div class="boxIn">
             <label for="psw"><b>Country</b></label>
             <div class="inputs">
-              <input type="text" id= "country" placeholder="Enter Country" name="countr" required>
+              <input type="text" id= "country" placeholder="Enter Country" name="country" required>
             </div>
           </div>
 
           <div class="boxIn">
             <label for="psw"><b>Mail</b></label>
             <div class="inputs">
-              <input id="email" type="text" placeholder="Enter mail address" name="mail" required>
+              <input id="email" type="text" placeholder="Enter mail address" name="email" required>
             </div>
             <small id="emailvalid" class="form-text
                 text-muted invalid-feedback">
@@ -244,6 +248,10 @@
   </div>
   <div class="slider"></div>
 
+<!--- LOGGED IN --->
+<div class="logged_in_div" id="logged_in_id">
+  <img src="img/welcome.png" alt="welcome">
+</div>
 
 <!---CONTINUT --->
     <div class="Back">
@@ -356,6 +364,7 @@
         referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="js/register.js">
 
